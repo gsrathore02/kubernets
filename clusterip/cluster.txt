@@ -1,0 +1,1 @@
+kubectl expose pod thirdpod --port=8000 --target-port=80 --name myfirstservice
