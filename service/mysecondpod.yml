@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    podname: secondpodlbl
+    type: app
+  name: secondpod
+
+spec: 
+  containers:
+  - image: coolgourav147/nginx-custom
+    name: secondpod

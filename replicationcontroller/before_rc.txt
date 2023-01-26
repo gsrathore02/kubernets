@@ -1,0 +1,50 @@
+Name:             firstpod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             master-node/192.168.69.160
+Start Time:       Tue, 13 Dec 2022 07:27:23 +0530
+Labels:           type=app
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.182
+IPs:
+  IP:  10.244.0.182
+Containers:
+  firtcontainer:
+    Container ID:   containerd://ef841bee531969194da752ae792ed215f9de4c5f8d646c460eb00c3dd0d561c9
+    Image:          coolgourav147/nginx-custom:v1
+    Image ID:       docker.io/coolgourav147/nginx-custom@sha256:d1cfc31e46de0efa210b0d94c8cf1f488978dabfe975cc1ea7ceeb6c85e14c2e
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Tue, 13 Dec 2022 07:27:24 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-bkvj9 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-bkvj9:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  76s   default-scheduler  Successfully assigned default/firstpod to master-node
+  Normal  Pulled     75s   kubelet            Container image "coolgourav147/nginx-custom:v1" already present on machine
+  Normal  Created    75s   kubelet            Created container firtcontainer
+  Normal  Started    75s   kubelet            Started container firtcontainer
