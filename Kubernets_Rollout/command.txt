@@ -1,0 +1,14 @@
+1261  kubectl apply -f first
+ 1262  kubectl apply -f firstdeploy.yml
+ 1263  vim firstdeploy.yml
+ 1264  kubectl apply -f firstdeploy.yml
+ 1265  kubectl rollout pause deployment firstdeploy
+ 1266  kubectl rollout resume deployment firstdeploy
+ 1267* kubectl rollout  deployment firstdeploy
+ 1268  kubectl rollout pause deployment firstdeploy
+ 1269  kubectl rollout status deployment firstdeploy
+ 1270  kubectl rollout stresume eployment firstdeploy
+ 1271  kubectl rollout resume eployment firstdeploy
+ 1272  kubectl rollout stresume deployment firstdeploy
+ 1273  kubectl rollout resume deployment firstdeploy
+ 1274  kubectl rollout status deployment firstdeploy
