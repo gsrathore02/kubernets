@@ -1,0 +1,4 @@
+kubectl taint node worker01 mysize=large:NoSchedule
+kubectl taint node worker02 mysize=small:NoSchedule
+kubectl taint node worker02 mysize=small:NoExecute # existing remove and create new pod
+
