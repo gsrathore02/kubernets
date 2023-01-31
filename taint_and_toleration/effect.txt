@@ -1,0 +1,22 @@
+tolerations:
+  - effect: --
+    key: "mysize"
+    operator: "equal"
+    value: "large"
+
+tolerations:
+  - effect: "NoSchedule"
+    key: "mysize"
+    operator: "Exists"
+
+tolerations:
+  - effect: "NoSchedule"
+    key: ""
+    operator: "Exists"
+
+tolerations:
+  - key: "mysize"
+    operator: "Equal"
+    value: "large"
+    toleratioSeconds: 60
+    effect: "NoExecute"

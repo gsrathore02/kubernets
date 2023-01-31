@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: pod
+spec:
+  containers:
+    - image: coolgourav147/nginx-custom
+      name: firstcontainer
+      imagePullPolicy: Never
+  tolerations:
+    - effect: "NoSchedule"
+      key: "mysize"
+      operator: "equal"
+      value: "large"
+
