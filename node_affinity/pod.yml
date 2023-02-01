@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: pod1
+spec:
+  containers:
+    - image: coolgourav147/nginx-custom
+      name: firstcontainer
+      imagePullPolicy: Never
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+             - key: size
+               operator: In
+               values:
+                 - extralarge        
+              #      preferredDuringSchedulingIgnoredDuringExecution:
+              #        - preference:
+              #            matchExpressions:
+              #              - key: size
+              #                operator: In
+              #                values: 
+              #                  - small
+              #            weight: 1
+
+#preferred DuringScheduling IgnoredDuringExecution          
+

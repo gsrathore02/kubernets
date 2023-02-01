@@ -1,0 +1,30 @@
+kubectl get node --show-labels
+cat pod.yml 
+kubectl label node master-node size-
+kubectl label node master-node size=extralarge
+kubectl get pod
+kubectl label node master-node size-
+kubectl get nodes --show-labels
+kubectl label node master-node size=small
+kubectl get pod
+vim pod.yml 
+kubectl apply -f pod.yml 
+kubectl get pod
+kubectl label node master-node size=small, size=large
+kubectl label node master-node size=large
+kubectl get pod
+kubectl get node --show-labels
+kubectl label node master-node size-
+kubectl get pod
+kubectl label node master-node size=large
+kubectl get pod
+kubectl get node --show-labels
+kubectl get pod
+cat pod.yml 
+kubectl label node master-node size-
+kubectl label node master-node size=extralarge
+kubectl get pod
+kubectl delete pod pod1
+kubectl delete pod pod
+kubectl get pod
+kubectl label node master-node size-
