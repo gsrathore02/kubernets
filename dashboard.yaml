@@ -1,0 +1,35 @@
+#Deploying the Dashboard UI
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
+kubectl get ns
+
+root@Master-Node:/home/zenadmin# kubectl get ns
+NAME                   STATUS   AGE
+cafe                   Active   21h
+default                Active   45h
+hotel                  Active   22h
+kube-flannel           Active   45h
+kube-node-lease        Active   45h
+kube-public            Active   45h
+kube-system            Active   45h
+kubernetes-dashboard   Active   111m
+
+#change the type=nodePort
+#add nodePort=32332
+
+kubectl -n kubernetes-dashboard edit svc kubernetes-dashboard
+
+kubectl -n kubernetes-dashboard get svc
+
+root@Master-Node:/home/zenadmin# kubectl -n kubernetes-dashboard get svc
+NAME                        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
+dashboard-metrics-scraper   ClusterIP   10.108.193.158   <none>        8000/TCP        114m
+kubernetes-dashboard        NodePort    10.109.48.58     <none>        443:32332/TCP   114m
+
+https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+
+kubectl apply -f sa_cluster_admin.yaml
+
+kubectl -n kube-system create token dashboard-admin
+
