@@ -1,0 +1,2 @@
+#configmap from file
+kubectl create cm filecm --from-file=properties/

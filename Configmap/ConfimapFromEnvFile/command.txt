@@ -1,0 +1,5 @@
+kubectl create cm envcm --from-env-file=env.sh 
+kubectl get cm
+kubectl describe cm envcm
+kubectl create cm fromfile --from-file=env.sh
+kubectl get cm

@@ -1,0 +1,2 @@
+#using configmap we can store db value
+kubectl create cm cm2 --from-literal=database_ip="192.168.0.4" --from-literal=database_username="root" --from-literal=database_password="mypassword"
