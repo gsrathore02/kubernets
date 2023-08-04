@@ -1,2 +1,3 @@
 # kubernets
-you can learn kubernetes basis 
+you can learn kubernetes basis from Rathore
+
