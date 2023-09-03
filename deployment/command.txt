@@ -1,0 +1,11 @@
+#Rollout command
+kubectl rollout status deployment/myapp-deployment
+kubectl rollout history deployment/myapp-deployment
+
+#Deployment strategy
+  1. Recreate strategy
+  - remove old deployment and create new deployment # application will down or unaccessible.
+  2. rolling update strategy
+  - one deployment down and create new one by one 
+  - 
+  
