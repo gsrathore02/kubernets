@@ -1,11 +1,33 @@
 #Rollout command
+
+#Create
+
+kubectl create deployment -f my-app.yaml
+
+#Get
+
+kubectl get deployment
+
+#update
+
+kubectl apply deployment -f my-app.yaml
+
+kubectl set image deployment/myapp-deployment nginx:nginx:1.9.1 
+
+#status
+
 kubectl rollout status deployment/myapp-deployment
+
 kubectl rollout history deployment/myapp-deployment
 
 #Deployment strategy
   1. Recreate strategy
   - remove old deployment and create new deployment # application will down or unaccessible.
-  2. rolling update strategy
-  - one deployment down and create new one by one 
-  - 
-  
+  2. Rolling update strategy
+  - one deployment down and create new one by one # application not down
+
+#Rollback 
+
+# If you realize your application not working perfectly, we will undo the rolling update and back your application back from the new version to the old version, new deployment will be deleted and you will see the result in relicaset 
+
+kubectl rollout undo deployment/myapp-deployment
