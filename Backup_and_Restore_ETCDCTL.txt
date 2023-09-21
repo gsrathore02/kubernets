@@ -1,3 +1,4 @@
+#export ETCDCTL
 export ETCDCTL_API=3
 
 #Backup ETCDCTL
